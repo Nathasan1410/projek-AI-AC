@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Prediction</title>
+  </head>
+  <body>
+    <h1>Temperature Prediction</h1>
+    <form action="/predict" method="POST">
+      <label for="current_temp">Current Temperature:</label>
+      <input type="text" id="current_temp" name="current_temp" required /><br />
+
+      <label for="current_humidity">Current Humidity:</label>
+      <input type="text" id="current_humidity" name="current_humidity" required /><br />
+
+      <label for="current_ac_temp">Current AC Temperature:</label>
+      <input type="text" id="current_ac_temp" name="current_ac_temp" required /><br />
+
+      <label for="desired_temp">Desired Room Temperature:</label>
+      <input type="text" id="desired_temp" name="desired_temp" required /><br />
+
+      <label for="current_hour">Current Hour (24-hour format):</label>
+      <input type="text" id="current_hour" name="current_hour" required /><br />
+
+      <input type="submit" value="Predict" />
+    </form>
+  </body>
+</html>

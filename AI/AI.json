@@ -1,0 +1,345 @@
+[
+    {
+        "id": "28707b06a8d13a1f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3de6306164181785",
+        "type": "mqtt out",
+        "z": "28707b06a8d13a1f",
+        "name": "",
+        "topic": "projek_AI",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f6937f0707e04964",
+        "x": 1140,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "e6acba98c21bd4f1",
+        "type": "ui_form",
+        "z": "28707b06a8d13a1f",
+        "name": "",
+        "label": "",
+        "group": "ef0153077c5fc2f1",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "current_ac_temp",
+                "value": "current_ac_temp",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "desired_temp",
+                "value": "desired_temp",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "current_hour",
+                "value": "current_hour",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "current_ac_temp": "",
+            "desired_temp": "",
+            "current_hour": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "5e1ff9856804eece",
+                "47f8ed4825faa252"
+            ]
+        ]
+    },
+    {
+        "id": "e115acc991869b20",
+        "type": "mqtt in",
+        "z": "28707b06a8d13a1f",
+        "name": "",
+        "topic": "projekAI/waktu",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f6937f0707e04964",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 720,
+        "wires": [
+            [
+                "2ea1e4742b476180",
+                "a4a9379c81c91153"
+            ]
+        ]
+    },
+    {
+        "id": "2ea1e4742b476180",
+        "type": "ui_text",
+        "z": "28707b06a8d13a1f",
+        "group": "ef0153077c5fc2f1",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Waktu yang diperlukan : ",
+        "format": "{{msg.payload}} menit",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 690,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "e3cf98937148b2fc",
+        "type": "ui_text",
+        "z": "28707b06a8d13a1f",
+        "group": "ef0153077c5fc2f1",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "suhu AC yang diinginkan : ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1010,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "c60c9526de580f3d",
+        "type": "join",
+        "z": "28707b06a8d13a1f",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 850,
+        "y": 220,
+        "wires": [
+            [
+                "3de6306164181785"
+            ]
+        ]
+    },
+    {
+        "id": "161e52a8e4614d4e",
+        "type": "mysql",
+        "z": "28707b06a8d13a1f",
+        "mydb": "14961fe6fdda077d",
+        "name": "Temp&Hum database",
+        "x": 520,
+        "y": 280,
+        "wires": [
+            [
+                "f7a04f626561d228"
+            ]
+        ]
+    },
+    {
+        "id": "47f8ed4825faa252",
+        "type": "function",
+        "z": "28707b06a8d13a1f",
+        "name": "function 18",
+        "func": "msg.topic = \"SELECT temperature, humidity FROM data_ai_2 ORDER BY timestamp DESC LIMIT 1\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 219,
+        "y": 305,
+        "wires": [
+            [
+                "161e52a8e4614d4e"
+            ]
+        ]
+    },
+    {
+        "id": "5e1ff9856804eece",
+        "type": "function",
+        "z": "28707b06a8d13a1f",
+        "name": "function 19",
+        "func": "const arr = [];\nconst x = msg.payload['current_hour'];\nconst y = msg.payload['desired_temp'];\nconst z = msg.payload['current_ac_temp'];\n\narr.push({\n            'current_hour':x,\n'desired_temp' :y,\n'current_ac_temp':x\n        });\n\nmsg.payload = arr[0];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 320,
+        "wires": [
+            [
+                "c60c9526de580f3d"
+            ]
+        ]
+    },
+    {
+        "id": "f7a04f626561d228",
+        "type": "function",
+        "z": "28707b06a8d13a1f",
+        "name": "function 20",
+        "func": "msg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 233,
+        "wires": [
+            [
+                "c60c9526de580f3d"
+            ]
+        ]
+    },
+    {
+        "id": "a288815e4b4e732d",
+        "type": "mqtt in",
+        "z": "28707b06a8d13a1f",
+        "name": "",
+        "topic": "projekAI/AC",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f6937f0707e04964",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 390,
+        "y": 620,
+        "wires": [
+            [
+                "e3cf98937148b2fc",
+                "a4a9379c81c91153"
+            ]
+        ]
+    },
+    {
+        "id": "a4a9379c81c91153",
+        "type": "debug",
+        "z": "28707b06a8d13a1f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "f6937f0707e04964",
+        "type": "mqtt-broker",
+        "name": "emqx",
+        "broker": "broker.emqx.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60000",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ef0153077c5fc2f1",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "b76d29179945a562",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "14961fe6fdda077d",
+        "type": "MySQLdatabase",
+        "name": "AI",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "projek_ai",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "b76d29179945a562",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]
