@@ -1,8 +1,14 @@
+71220872/Nathanael Santoso
+7122/Vincen Imanuel
+7122/Chika Venesa
+
 # Pemerkira waktu suhu ac (Title)
 
-isi penjelasan general ini ngapain
+(title) menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah ____ karena _____. Data diambil dengan device IoT dengan sensor DHT11.  
 
 # Data Acquirement (jelasin  tentang IoT and gmn data di ambil)
+
+Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual.
 
 data yang kita ambil merupakan data primer...
 
