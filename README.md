@@ -2,13 +2,13 @@
 7122/Vincen Imanuel \n
 7122/Chika Venesa \n
 
-# Pemerkira waktu suhu ac (Title)
+# AI unuk Prediksi Waktu dan Suhu AC 
 
-(title) menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah ____ karena _____. Data diambil dengan device IoT dengan sensor DHT11.  
+AI unuk Prediksi Waktu dan Suhu AC menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah ____ karena _____. Data diambil dengan device IoT dengan sensor DHT11.  
 
 # Data Acquirement (jelasin  tentang IoT and gmn data di ambil)
 
-Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual.
+Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual. Data yang diambi dari device IoT dikirim ke broker yang kemudian diterima oleh Node-RED. Data yang diterima Node-RED dimasukkan ke database yang kemudian akan dipakai sebagai input ke AI.
 
 # Code Python/Model Training
 
@@ -41,6 +41,17 @@ Data diambil dari input user dan database yang kemudian di jadikan array. Data k
 
 Data kemudian dikirimkan kembali ke Node-RED untuk ditunjukkan.
 
+
+### penampakan ui node red
+
 ![img2.2](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_ui2.png)
 ![img2.1](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_ui1.png)
+
+### penampakan dashboard pemrosesan program node red
+
 ![img2.3](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_dashboard.png)
+
+
+### penampakan app2.py
+
+![img2.4](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/app2.png)
