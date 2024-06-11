@@ -2,7 +2,7 @@
 
 71220856/Vincen Imanuel 
 
-7122/Chika Venesa 
+71220838/Chika Venesa 
 
 # AI untuk Prediksi Waktu dan Suhu AC 
 
