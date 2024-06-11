@@ -1,6 +1,8 @@
-71220872/Nathanael Santoso \n
-7122/Vincen Imanuel \n
-7122/Chika Venesa \n
+71220872/Nathanael Santoso 
+
+7122/Vincen Imanuel 
+
+7122/Chika Venesa 
 
 # AI unuk Prediksi Waktu dan Suhu AC 
 
