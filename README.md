@@ -6,7 +6,7 @@
 
 # AI untuk Prediksi Waktu dan Suhu AC 
 
-AI unuk Prediksi Waktu dan Suhu AC menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah random forest karena mean errornya lebih rendah jika dibangkan dengan menggunakan linear regression (sekitar 56%), menurut kami hal tersebut terjadi dikarenakan data yang kami gunakan tidak sepenuhnya linear. Data diambil dengan device IoT dengan sensor DHT11.  
+AI untuk Prediksi Waktu dan Suhu AC menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah random forest karena mean errornya lebih rendah jika dibandingkan dengan menggunakan linear regression (sekitar 56%), menurut kami hal tersebut terjadi dikarenakan data yang kami gunakan tidak sepenuhnya linear. Data diambil menggunakan device IoT dengan sensor DHT11.  
 
 # Data Acquirement
 
@@ -14,7 +14,7 @@ Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sen
 
 # Code Python/Model Training
 
-algoritma yang kita pakai adalah Linear Regression dan Random Forest. Untuk hasilnya, prediksi dari algoritma Linear Regression sedikit lebih masuk akal jika dibandingkan dengan Random Forest. Akan tetapi, untuk evaluasinya di saat kami menggunakan Mean Error, Mean Error dari Random Forest lebih rendah. Menurut kami ini terjadi karena data yang kami punya tidak sepenuhnya linear. Semakin rendah mean error maka semakin baik kinerja AI, maka kami memilih Random Forest.
+Algoritma yang kami pakai adalah Linear Regression dan Random Forest. Untuk hasilnya, prediksi dari algoritma Linear Regression sedikit lebih masuk akal jika dibandingkan dengan Random Forest. Akan tetapi, untuk evaluasinya di saat kami menggunakan Mean Error, Mean Error dari Random Forest lebih rendah. Menurut kami ini terjadi karena data yang kami punya tidak sepenuhnya linear. Semakin rendah mean error maka semakin baik kinerja AI, maka kami memilih Random Forest.
 
 # Pengolahan Data dan Interface
 
