@@ -6,16 +6,16 @@
 
 # AI untuk Prediksi Waktu dan Suhu AC 
 
-AI unuk Prediksi Waktu dan Suhu AC menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah random forest karena mean errornya lebih rendah jika dibangkan dengan menggunakan linear regression (sekitar 56%), menurut kami hal tersebut terjadi dikarenakan data yang kami gunakan tidak sepenuhnya linear. Data diambil dengan device IoT dengan sensor DHT11.  
+AI unuk Prediksi Waktu dan Suhu AC menggunakan AI dan IoT untuk memperkirakan waktu dan suhu AC yang diperlukan untuk mencapai sebuah suhu dengan efisien. Algoritma yang digunakan adalah random forest karena mean errornya lebih rendah jika dibangkan dengan menggunakan linear regression (sekitar 56%), menurut kami hal tersebut terjadi dikarenakan data yang kami gunakan tidak sepenuhnya linear. Data yang kami gunakan diambil dengan device IoT yaitu sensor DHT11.  
 
 # Data Acquirement
 
-Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual. Data yang diambi dari device IoT dikirim ke broker yang kemudian diterima oleh Node-RED. Data yang diterima Node-RED dimasukkan ke database yang kemudian akan dipakai sebagai input ke AI.
+Data yang digunakan merupakan data primer yang diambil menggunakan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual. Data yang diambi dari device IoT dikirim ke broker yang kemudian diterima oleh Node-RED. Data yang diterima Node-RED dimasukkan ke database yang kemudian akan dipakai sebagai input ke AI.
 
 # Code Python/Model Training
+(Model & Algoritma)
+Algoritma yang kita pakai adalah random forest karena menurut kami algoritma ini memiliki akurasi yang lebih tinggi untuk data yang cukup kompleks, dan cocok untuk mengolah serta menangani data yang telah dikumpulkan sebelumnya yang mana tidak sepenuhnya berbentuk linear.
 
-algoritma yang kita pakai adalah
-(jelasin model & algoritma)
 
 # Pengolahan Data dan Interface
 
