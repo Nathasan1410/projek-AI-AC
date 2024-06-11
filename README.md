@@ -1,6 +1,6 @@
-71220872/Nathanael Santoso
-7122/Vincen Imanuel
-7122/Chika Venesa
+71220872/Nathanael Santoso \n
+7122/Vincen Imanuel \n
+7122/Chika Venesa \n
 
 # Pemerkira waktu suhu ac (Title)
 
@@ -19,7 +19,28 @@ algoritma yang kita pakai adalah
 
 Terdapat dua metode yang dapat digunakan untuk mengolah data dengan AI
 
-
 ## Python HTML (punya Vincent)
 
+![img1.1](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/app_img1.png)
+
+![img1.2](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/app_img2.png)
+
+app.py dapat di run secara langsung untuk menjalankan AI
+
 ## Node-RED
+
+Untuk menjalankan dashboard Node-RED, diperlukan untuk menginstall node.js, Node-RED dan module 'node-red-node-mysql' untuk menjalankan dashboard.
+
+Kemudian user perlu menjalankan xampp untuk database dan menjalankan Node-RED melalui node.js
+
+Setelah semua persiapan selesai, user dapat membuka dashboard di localhost dan memulai app2.py
+
+Data nanti akan diambiil dari database yang kemudian akan dikirim ke program Python yang dijalankan yang kemudian akan dikembalikan lagi pada Node-RED.
+
+Data diambil dari input user dan database yang kemudian di jadikan array. Data kemudian akan dikirim ke program app2.py dan di proses oleh AI.
+
+Data kemudian dikirimkan kembali ke Node-RED untuk ditunjukkan.
+
+![img2.2](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_ui2.png)
+![img2.1](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_ui1.png)
+![img2.3](https://github.com/Nathasan1410/projek-AI-AC/blob/main/images/node-red_dashboard.png)
