@@ -10,8 +10,6 @@
 
 Data yang digunakan merupakan data primer yang diambil dengan esp8266 dengan sensor DHT11. Input dari suhu AC masih di input secara manual.
 
-data yang kita ambil merupakan data primer...
-
 # Code Python/Model Training
 
 algoritma yang kita pakai adalah
@@ -19,7 +17,8 @@ algoritma yang kita pakai adalah
 
 # Pengolahan data dan interface
 
-terdapat dua metode yang dapat digunakan untuk mengolah data dengan AI
+Terdapat dua metode yang dapat digunakan untuk mengolah data dengan AI
+
 
 ## Python HTML (punya Vincent)
 
